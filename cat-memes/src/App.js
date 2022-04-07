@@ -10,7 +10,7 @@ const CatMeme = () => {
 
   useEffect(() => {
     const catImage = new Image();
-    catImage.src = "https://thiscatdoesnotexist.com/"
+    catImage.src = "https://candicetate.com/images/Link_everyday.jpg"
     catImage.onload = () => setImage(catImage)
   }, [])
 
@@ -18,38 +18,38 @@ const CatMeme = () => {
     if(image && canvas) {
       const ctx = canvas.current.getContext("2d")
       ctx.fillStyle = "black"
-      ctx.fillRect(0, 0, 400, 256 + 80)
-      ctx.drawImage(image, (400 - 256) / 2, 40)
+      ctx.fillRect(0, 0, 500, 500 + 80)
+      ctx.drawImage(image, (500 - 500) / 2, 40)
 
       ctx.font = "20px Comic Sans MS"
       ctx.fillStyle = "white"
       ctx.textAlign = "center"
 
-      ctx.fillText(topText, (400 / 2), 25)
-      ctx.fillText(bottomText, (400 / 2), 256 + 40 + 25)
+      ctx.fillText(topText, (500 / 2), 25)
+      ctx.fillText(bottomText, (500 / 2), 450 + 40 + 25)
 
     }
   }, [image, canvas, topText, bottomText])
 
   return (
     <div>
-      <h1>Cat Meme!</h1>
+      <h1>Sh🐱t My Cats Say</h1>
 
       <div>
         <canvas 
           ref={canvas}
-          width={400}
-          height={256 + 80}
+          width={500}
+          height={500 + 80}
         />
       </div>
 
       <div>
-        <input type="text"
+       <p>Top Text</p> <input type="text"
           value={topText}
           onChange={e => setTopText(e.target.value)}
         />
         <br />
-        <input type="text"
+        <p>Bottom Text</p> <input type="text"
           value={bottomText}
           onChange={e => setBottomText(e.target.value)}
         />
